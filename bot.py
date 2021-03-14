@@ -72,7 +72,7 @@ time.sleep(1.5)
 title=driver.find_element_by_xpath('/html/body/div[3]/main/div[2]/div[3]/div[1]/div[1]/div/div/div[1]/h1')
 print ("Selected item is "+title.text)
 input('Hit enter when ready to start bot')
-sms("bot for " +title.text+" has started")
+#sms("bot for " +title.text+" has started")
 def bot():
     
        
@@ -108,7 +108,7 @@ def bot():
     
     print('Order submission screenshot saved as "OrderSubmission.png" in repository location')                                                              #order completion code
     driver.get_screenshot_as_file('OrderSubmission.png')
-    sms('Bot Program executed succesfully for '+title.text)
+    #sms('Bot Program executed succesfully for '+title.text)
     end=input(title.text+' program executed succesfuly hit enter to exit browser or type retry to start bot again:')                                                    #if program ran all the way through will print program ran succesfully
     if end=='retry':
                 bot()
