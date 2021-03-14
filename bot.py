@@ -48,11 +48,13 @@ driver.get("https://www.bestbuy.com")                                           
 
 print('READ CAREFULLY OR BOT MAY NOT WORK AS INTENDED.hit enter once you have completed each step')
 time.sleep(3)
-security_code=input('Enter 3 digit security code on back of debit card(this is the only personal information this bot asks for):')                          #get card csv to autofill later
+security_code=input('Enter security code on back of debit card(this is the only personal information this bot asks for):')                          #get card csv to autofill later
 input("Login to your bestbuy account and fill out shipping and payment method.")
 input('Add an in stock item to your cart and go all the way through checkout process until you get to the confirm order button.')
-input('Now return to your cart and make sure you REMOVE the item from your cart or you will be charged for this item also.')
+
 driver.get('https://www.bestbuy.com/cart')
+
+input('Now return to your cart and make sure you REMOVE the item from your cart or you will be charged for this item also.')
 print("checking cart is empty")
 time.sleep(4)
 
@@ -85,7 +87,7 @@ def bot():
        #time.sleep(1)
        sold_out=check_exists_by_xpath("/html/body/div[3]/main/div[2]/div[3]/div[2]/div/div/div[6]/div[1]/div/div/div/button")                                   
        still_running_check+=1
-       sms_reply()
+       #sms_reply()
        #if still_running_check%100==0:
            #sms('Bot is still running and is on attempt '+str(still_running_check)+'\n '+str(round((time.time()-timer)/60,2))+' minute(s) have passed')
        if sold_out==False:
@@ -111,10 +113,10 @@ def bot():
     if end=='retry':
                 bot()
 bot()  
-#while True:
-#    try:
-#        bot()
-#    except:
-#        pass
-#    else:
-#        break
+while True:
+    try:
+        bot()
+    except:
+        pass
+    else:
+        break
